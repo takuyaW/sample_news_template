@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+  <script src="components/loader.js"></script>
+  <script src="lib/onsenui/js/onsenui.min.js"></script>
+
+  <link rel="stylesheet" href="components/loader.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script>
+    ons.ready(function() {
+      console.log("Onsen UI is ready!");
+    });
+    
+
+    window.fn = {};
+    window.fn.open = function() {
+      var menu = document.getElementById('menu');
+      menu.open();
+    };
+    window.fn.load = function(page) {
+      var content = document.getElementById('content');
+      var menu = document.getElementById('menu');
+      content
+        .load(page)
+        .then(menu.close.bind(menu));
+    };
+
+    
+  </script>
+</head>
+<body>
+  <ons-splitter>
+    <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
+      <ons-page>
+        <ons-list>
+          <ons-list-item onclick="fn.load('home.html')" tappable>
+            <ons-icon icon="ion-ios-home-outline" size="18px">　ホーム</ons-icon>
+          </ons-list-item>
+          <ons-list-item onclick="fn.load('favour.html')" tappable>
+            <ons-icon icon="ion-ios-heart-outline" size="18px">　お気に入り</ons-icon>
+          </ons-list-item>
+          <ons-list-item onclick="fn.load('folder1.html')" tappable>
+            <ons-icon icon="ion-ios-folder-outline" size="18px">　フォルダ１</ons-icon>
+          </ons-list-item>
+          <ons-list-item onclick="fn.load('folder2.html')" tappable>
+            <ons-icon icon="ion-ios-folder-outline" size="18px">　フォルダ２</ons-icon>
+          </ons-list-item>
+          <ons-list-item onclick="fn.load('add_folder.html')" tappable>
+            <ons-icon icon="ion-ios-plus-outline" size="18px">　フォルダ追加</ons-icon>
+          </ons-list-item>
+          <ons-list-item onclick="fn.load('settings.html')" tappable>
+            <ons-icon icon="ion-ios-gear-outline" size="18px">　設定</ons-icon> 
+          </ons-list-item>
+        </ons-list>
+      </ons-page>
+    </ons-splitter-side>
+    <ons-splitter-content id="content" page="home.html"></ons-splitter-content>
+  </ons-splitter>
+
+  <ons-template id="home.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button onclick="fn.open()">
+            <ons-icon icon="ion-navicon, material:md-menu"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+         Monaca NEWS
+        </div>
+         <div class="right">
+          <ons-toolbar-button onclick="fn.open()">
+            <ons-icon icon="ion-ios-more-outline"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+      </ons-toolbar>
+
+<ons-list-item onclick="fn.load('news1.html')" tappable>
+  <div class="right">
+    <img class="list-item__thumbnail" src="img/sakura.jpg">
+  </div>
+  <div class="center">
+    <span class="list-item__title">桜の開花予想早まる　東京は昨年より５日早く</span>
+    <span class="list-item__source">monacajournal.com・茂中聡</span>
+    <span class="list-item__text">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</span>
+    <span class="list-item__date">3月１日  9時10分</span>
+  </div>
+</ons-list-item>
+<ons-list-item onclick="fn.load('news2.html')" tappable>
+  <div class="right">
+    <img class="list-item__thumbnail" src="img/iss.jpg">
+  </div>
+  <div class="center">
+    <span class="list-item__title">宇宙飛行士の佐藤さん、ISSで船外活動</span>
+    <span class="list-item__source">monacajournal.com・茂中聡</span>
+    <span class="list-item__text">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</span>
+    <span class="list-item__date">3月１日  9時20分</span>
+  </div>
+</ons-list-item>
+<ons-list-item onclick="fn.load('news3.html')" tappable>
+  <div class="right">
+    <img class="list-item__thumbnail" src="img/panda.jpg">
+  </div>
+  <div class="center">
+    <span class="list-item__title">パンダの赤ちゃん、すくすく育つ　体重５キロ超</span>
+    <span class="list-item__source">monacajournal.com・茂中聡</span>
+    <span class="list-item__text">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</span>
+    <span class="list-item__date">3月１日  9時30分</span>
+  </div>
+</ons-list-item>
+<ons-list-item onclick="fn.load('news4.html')" tappable>
+  <div class="right">
+    <img class="list-item">
+  </div>
+  <div class="center">
+    <span class="list-item__title">（新製品）グリーンカレー風モナカレー、限定発売</span>
+    <span class="list-item__source">monacajournal.com・茂中聡</span>
+    <span class="list-item__text">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</span>
+    <span class="list-item__date">3月１日  9時40分</span>
+  </div>
+</ons-list-item>
+</ons-page>
+</template>
+
+</body>
+</html>
